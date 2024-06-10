@@ -14,6 +14,36 @@ pnpm dev
 bun dev
 ```
 
+## How to up database
+
+Install docker:
+
+```bash
+npm brew install docker docker-compose colima
+# make coffee
+colima start
+```
+
+set .env variable
+
+```bash
+DATABASE_URL="..."
+```
+
+run container 
+
+```bash
+docker compose up
+```
+
+How to shut down container 
+
+```bash
+docker compose down
+# if you want clear data then 
+docker compose down -v
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
