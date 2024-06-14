@@ -1,7 +1,7 @@
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  optimizePackageImports: ["@prisma/client"],
+  // optimizePackageImports: ["@prisma/client"],
 };
 
 export default withSentryConfig(nextConfig, {
