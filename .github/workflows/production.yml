@@ -10,8 +10,24 @@ on:
       - master
 
 jobs:
-  Deploy-Production:
+  lint:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x.x
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run lint:types
+      - run: npm run test
+  deploy:
+    needs: lint
+    runs-on: ubuntu-latest
+    concurrency:
+      group: prod
+      cancel-in-progress: true
     steps:
 
       - uses: actions/checkout@v3
