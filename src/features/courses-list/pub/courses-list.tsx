@@ -18,6 +18,7 @@ export async function CourseList({
 
   return (
     <div className="flex flex-col gap-3">
+      <h1>Courses</h1>
       {coursesList.map((course) => (
         <CourseItem
           key={course.id}
