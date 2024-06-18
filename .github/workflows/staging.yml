@@ -64,7 +64,6 @@ jobs:
         run: npx playwright test
         env:
           TEST_ENV_BASE_URL: ${{ needs.deploy.outputs.deploy_url_output }}
-#          TEST_ENV_BASE_URL: https://courses-map-git-staging-romangovors-projects.vercel.app/
       - uses: actions/upload-artifact@v3
         if: always()
         with:
