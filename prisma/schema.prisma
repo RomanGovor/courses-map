@@ -51,8 +51,9 @@ model Session {
 
 model User {
   id            String    @id @default(cuid())
+  email         String    @unique
+  role          ROLE      @default(USER)
   name          String?
-  email         String?   @unique
   emailVerified DateTime? @map("email_verified")
   image         String?
   accounts      Account[]
@@ -68,4 +69,9 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map("verificationtokens")
+}
+
+enum ROLE {
+  ADMIN
+  USER
 }
