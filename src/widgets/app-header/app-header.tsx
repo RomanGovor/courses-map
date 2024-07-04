@@ -11,8 +11,6 @@ export function AppHeader({
 }) {
   const isProfile = variant !== "auth";
 
-  console.log(variant);
-
   return (
     <Layout
       logo={<Logo />}

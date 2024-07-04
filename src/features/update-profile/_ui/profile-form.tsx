@@ -106,7 +106,7 @@ export function ProfileForm({
             <FormItem>
               <FormLabel>Аватарка</FormLabel>
               <FormControl>
-                <AvatarField value={field.value} />
+                <AvatarField value={field.value} onChange={field.onChange} />
               </FormControl>
               <FormMessage />
             </FormItem>
